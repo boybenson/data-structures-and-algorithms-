@@ -5,7 +5,6 @@ const fib = (n) => {
   for (let i = 2; i <= n; i++) {
     fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
   }
-
   console.log(fibArray);
 };
 
