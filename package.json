@@ -1,0 +1,12 @@
+{
+  "name": "data-structures-and-algorithms-",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/boybenson/data-structures-and-algorithms-.git",
+  "author": "boybenson <ybenson96@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+}
