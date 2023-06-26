@@ -1,11 +1,21 @@
-const factorial = (n) => {
-  let fact = 1;
+// const factorial = (n) => {
+//   let fact = 1;
 
-  for (let i = 1; i <= n; i++) {
-    fact = fact * i;
+//   for (let i = 1; i <= n; i++) {
+//     fact = fact * i;
+//   }
+
+//   console.log(fact);
+// };
+
+// factorial(5);
+
+const factorialRec = (n) => {
+  if (n <= 2) {
+    return n;
   }
 
-  console.log(fact);
+  return n * factorialRec(n - 1);
 };
 
-factorial(5);
+console.log(factorialRec(5));
