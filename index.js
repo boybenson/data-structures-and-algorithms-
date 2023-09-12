@@ -1,26 +1,44 @@
-const mergeSort = (arr) => {
-  if (arr.length <= 1) {
-    return arr;
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
-  const mid = Math.floor(arr.length / 2);
-  const leftArr = mergeSort(arr.slice(0, mid));
-  const rightArr = mergeSort(arr.slice(mid));
-
-  return merge(leftArr, rightArr);
-};
-
-function merge(leftArr, rightArr) {
-  let sorted = [];
-
-  while (leftArr.length && rightArr.length) {
-    if (leftArr[0] < rightArr[0]) {
-      sorted.push(leftArr.shift());
-    } else sorted.push(rightArr.shift());
-  }
-
-  return [...sorted, ...leftArr, ...rightArr];
 }
 
-let arr = [1, 6, 2, 3, 9, -1, 7];
-const finalSortedArray = mergeSort(arr);
-console.log(finalSortedArray);
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  insert(value) {
+    const node = new Node(value);
+    // if the tree is empty
+    if (this.root === null) {
+      this.root = node;
+    } else {
+      this.insertNode(this.root, newNode);
+    }
+  }
+
+  insertNode(root, newNode) {
+    if (newNode.value < root.value) {
+      if (root.left === null) {
+        root.left = newNode;
+      } else {
+        this.insertNode(root.left, newNode);
+      }
+    } else {
+      if (root.right === null) {
+        root.right = newNode;
+      } else {
+        this.insertNode(root.right, newNode);
+      }
+    }
+  }
+}
+
+const bst = new BinarySearchTree();
+bst.insert(30);
+
+console.log(bst);
