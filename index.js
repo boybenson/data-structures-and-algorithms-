@@ -17,7 +17,7 @@ class BinarySearchTree {
     if (this.root === null) {
       this.root = node;
     } else {
-      this.insertNode(this.root, newNode);
+      this.insertNode(this.root, node);
     }
   }
 
@@ -36,9 +36,27 @@ class BinarySearchTree {
       }
     }
   }
+
+  search(root, value) {
+    if (root === null) {
+      return false;
+    }
+
+    if (root.value === value) {
+      return true;
+    }
+
+    if (value < root.value) {
+      return this.search(root.left, value);
+    } else {
+      return this.search(root.right, value);
+    }
+  }
 }
 
 const bst = new BinarySearchTree();
 bst.insert(30);
+bst.insert(12);
+bst.insert(15);
 
-console.log(bst);
+console.log(bst.search(bst.root, 12));
