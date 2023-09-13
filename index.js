@@ -52,11 +52,17 @@ class BinarySearchTree {
       return this.search(root.right, value);
     }
   }
+
+  preOrder(root) {
+    if (root) {
+      console.log(root.value);
+      this.preOrder(root.left);
+      this.preOrder(root.right);
+    }
+  }
 }
 
 const bst = new BinarySearchTree();
 bst.insert(30);
 bst.insert(12);
 bst.insert(15);
-
-console.log(bst.search(bst.root, 12));
