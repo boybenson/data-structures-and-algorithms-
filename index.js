@@ -76,6 +76,22 @@ class BinarySearchTree {
       console.log(root.value);
     }
   }
+
+  min(root) {
+    if (!root.left) {
+      return root.value;
+    } else {
+      return this.min(root.left);
+    }
+  }
+
+  max(root) {
+    if (!root.right) {
+      return root.value;
+    } else {
+      return this.min(root.right);
+    }
+  }
 }
 
 const bst = new BinarySearchTree();
