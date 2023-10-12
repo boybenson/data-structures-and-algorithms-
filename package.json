@@ -7,6 +7,6 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node --watch index.js "
   }
 }
